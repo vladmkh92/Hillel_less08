@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function forEach(array, callback) {
+            for (let index = 0; index < array.length; index++) {
+                callback(array.at(index), index, array);
+            }
+        }
+
+        function map(array, callback) {
+            let result = [];
+            for (let index = 0; index < array.length; index++) {
+                let resultArr = callback(array.at(index), index, array);
+                result.push(resultArr);
+            }
+            
+            return result;
+        }
+
+        function filter(array, callback) {
+            let result = [];
+            for (let index = 0; index < array.length; index++) {
+                let resultArr = callback(array.at(index), index, array);
+
+                if (resultArr) {
+                    result.push(array.at(index));
+                }
+            }
+
+            return result;
+        }
+    </script>
+</body>
+
+</html>
